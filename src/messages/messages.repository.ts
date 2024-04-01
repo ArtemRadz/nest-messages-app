@@ -2,7 +2,9 @@ import { readFile, writeFile } from 'fs/promises';
 
 export class MessagesRepository {
   async findOne(id: string) {
-    return await this.findAll[id];
+    const messages = await this.findAll();
+
+    return messages[id];
   }
 
   async findAll() {
